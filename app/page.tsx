@@ -189,7 +189,7 @@ export default function Home() {
       <footer className="border-t border-white/5 py-6 text-center text-xs text-gray-500">
         Built by{" "}
         <a
-          href="https://revinobakmaldi.com"
+          href="https://revinobakmaldi.vercel.app"
           className="text-primary hover:underline"
         >
           Revino B Akmaldi

@@ -16,7 +16,7 @@ export function Navbar() {
           <span className="font-semibold text-foreground">Auto EDA</span>
         </div>
         <a
-          href="https://revinobakmaldi.com"
+          href="https://revinobakmaldi.vercel.app"
           className="flex items-center gap-1.5 text-sm text-gray-400 transition-colors hover:text-primary"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
