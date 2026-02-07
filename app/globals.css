@@ -36,6 +36,11 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+/* Offset scroll targets below sticky navbar + tabs */
+[id^="section-"] {
+  scroll-margin-top: 110px;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
