@@ -13,7 +13,6 @@ interface CorrelationHeatmapProps {
 
 function correlationColor(value: number | null): string {
   if (value === null || isNaN(value)) return "#1f2937";
-  // Blue (negative) → White (zero) → Emerald (positive)
   const clamped = Math.max(-1, Math.min(1, value));
   if (clamped >= 0) {
     const intensity = clamped;
@@ -43,10 +42,6 @@ export function CorrelationHeatmap({ correlations }: CorrelationHeatmapProps) {
   if (columns.length < 2) return null;
 
   const n = columns.length;
-  const cellSize = Math.min(60, Math.max(30, 500 / n));
-  const labelWidth = 100;
-  const svgWidth = labelWidth + n * cellSize;
-  const svgHeight = labelWidth + n * cellSize;
 
   return (
     <section id="section-correlations">
@@ -63,89 +58,71 @@ export function CorrelationHeatmap({ correlations }: CorrelationHeatmapProps) {
           viewport={{ once: true }}
           className="overflow-x-auto"
         >
-          <svg
-            width={svgWidth}
-            height={svgHeight}
-            className="mx-auto"
-            onMouseLeave={() => setTooltip(null)}
-          >
-            {/* Column labels (top) */}
-            {columns.map((col, i) => (
-              <text
-                key={`col-${i}`}
-                x={labelWidth + i * cellSize + cellSize / 2}
-                y={labelWidth - 8}
-                textAnchor="end"
-                fontSize={Math.min(11, cellSize * 0.35)}
-                fill="#9ca3af"
-                transform={`rotate(-45, ${labelWidth + i * cellSize + cellSize / 2}, ${labelWidth - 8})`}
-              >
-                {col.length > 12 ? col.slice(0, 10) + "…" : col}
-              </text>
-            ))}
+          <div className="inline-block min-w-full">
+            {/* Column headers */}
+            <div
+              className="grid gap-1"
+              style={{
+                gridTemplateColumns: `auto repeat(${n}, minmax(48px, 1fr))`,
+              }}
+            >
+              {/* Empty top-left corner */}
+              <div />
+              {columns.map((col) => (
+                <div
+                  key={`col-${col}`}
+                  className="truncate px-1 pb-2 text-center font-mono text-xs text-gray-400"
+                  title={col}
+                >
+                  {col}
+                </div>
+              ))}
 
-            {/* Row labels (left) */}
-            {columns.map((col, i) => (
-              <text
-                key={`row-${i}`}
-                x={labelWidth - 8}
-                y={labelWidth + i * cellSize + cellSize / 2 + 4}
-                textAnchor="end"
-                fontSize={Math.min(11, cellSize * 0.35)}
-                fill="#9ca3af"
-              >
-                {col.length > 12 ? col.slice(0, 10) + "…" : col}
-              </text>
-            ))}
-
-            {/* Cells */}
-            {matrix.map((row, i) =>
-              row.map((val, j) => (
-                <rect
-                  key={`${i}-${j}`}
-                  x={labelWidth + j * cellSize}
-                  y={labelWidth + i * cellSize}
-                  width={cellSize - 1}
-                  height={cellSize - 1}
-                  rx={3}
-                  fill={correlationColor(val)}
-                  className="cursor-pointer transition-opacity hover:opacity-80"
-                  onMouseEnter={(e) => {
-                    const rect = e.currentTarget.getBoundingClientRect();
-                    setTooltip({
-                      x: rect.left + rect.width / 2,
-                      y: rect.top,
-                      row: columns[i],
-                      col: columns[j],
-                      val,
-                    });
-                  }}
-                  onMouseLeave={() => setTooltip(null)}
-                />
-              ))
-            )}
-
-            {/* Cell values (show if cells are large enough) */}
-            {cellSize >= 40 &&
-              matrix.map((row, i) =>
-                row.map((val, j) => (
-                  <text
-                    key={`val-${i}-${j}`}
-                    x={labelWidth + j * cellSize + cellSize / 2 - 0.5}
-                    y={labelWidth + i * cellSize + cellSize / 2 + 4}
-                    textAnchor="middle"
-                    fontSize={Math.min(10, cellSize * 0.25)}
-                    fill={Math.abs(val) > 0.5 ? "#fff" : "#9ca3af"}
-                    pointerEvents="none"
+              {/* Rows */}
+              {matrix.map((row, i) => (
+                <>
+                  {/* Row label */}
+                  <div
+                    key={`row-label-${i}`}
+                    className="flex items-center justify-end truncate pr-3 font-mono text-xs text-gray-400"
+                    title={columns[i]}
                   >
-                    {val != null ? val.toFixed(2) : ""}
-                  </text>
-                ))
-              )}
-          </svg>
+                    {columns[i]}
+                  </div>
+                  {/* Cells */}
+                  {row.map((val, j) => (
+                    <div
+                      key={`cell-${i}-${j}`}
+                      className="flex aspect-square cursor-pointer items-center justify-center rounded-md text-xs font-medium transition-opacity hover:opacity-80"
+                      style={{ backgroundColor: correlationColor(val) }}
+                      onMouseEnter={(e) => {
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        setTooltip({
+                          x: rect.left + rect.width / 2,
+                          y: rect.top,
+                          row: columns[i],
+                          col: columns[j],
+                          val,
+                        });
+                      }}
+                      onMouseLeave={() => setTooltip(null)}
+                    >
+                      <span
+                        className={
+                          Math.abs(val) > 0.5 ? "text-white" : "text-gray-400"
+                        }
+                      >
+                        {val != null ? val.toFixed(2) : ""}
+                      </span>
+                    </div>
+                  ))}
+                </>
+              ))}
+            </div>
+          </div>
 
           {/* Legend */}
-          <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-400">
+          <div className="mt-6 flex items-center justify-center gap-2 text-xs text-gray-400">
             <span>-1</span>
             <div className="flex h-3 w-40 overflow-hidden rounded-full">
               <div className="flex-1" style={{ background: "rgb(59, 130, 246)" }} />
