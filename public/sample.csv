@@ -1,0 +1,79 @@
+name,age,salary,department,city,experience_years,satisfaction_score,is_remote,join_date,bonus
+Alice,32,72000,Engineering,San Francisco,8,4.2,True,2016-03-15,5400
+Bob,28,58000,Marketing,New York,4,3.8,False,2020-01-10,3200
+Charlie,45,95000,Engineering,Seattle,20,4.7,True,2004-07-22,8500
+Diana,35,,Sales,Chicago,10,3.5,False,2014-11-30,4100
+Eve,29,62000,Engineering,San Francisco,5,,True,2019-06-18,3800
+Frank,41,88000,Sales,New York,16,4.1,False,2008-09-05,7200
+Grace,26,54000,Marketing,,3,3.9,True,2021-04-12,2900
+Henry,38,79000,Engineering,Seattle,14,4.4,True,2010-08-25,6100
+Ivy,31,67000,,San Francisco,7,3.6,,2017-02-14,4500
+Jack,50,110000,Engineering,New York,25,4.9,False,2000-12-01,9800
+Karen,27,56000,Marketing,Chicago,3,3.7,True,2021-09-20,2800
+Leo,33,71000,Sales,Seattle,9,4.0,False,2015-05-08,5200
+Monica,29,63000,Engineering,San Francisco,5,4.3,True,2019-11-15,3900
+Nathan,44,,Engineering,New York,19,,True,2005-03-28,8200
+Olivia,36,82000,Marketing,Chicago,12,4.5,False,2012-07-10,6800
+Paul,30,65000,Sales,,6,3.4,True,2018-01-22,4000
+Quinn,25,52000,Engineering,Seattle,2,3.8,True,2022-06-30,2500
+Rachel,39,86000,Sales,New York,15,4.2,False,2009-10-14,7000
+Sam,34,74000,Engineering,San Francisco,10,4.6,True,2014-04-05,5800
+Tina,42,91000,Marketing,Chicago,17,4.1,,2007-11-18,7500
+Uma,28,,Sales,Seattle,4,3.9,False,2020-08-22,3300
+Victor,47,102000,Engineering,New York,22,4.8,True,2003-01-15,9200
+Wendy,31,68000,Marketing,,7,3.7,True,2017-09-08,4700
+Xavier,37,80000,Sales,Chicago,13,4.0,False,2011-06-20,6300
+Yara,26,55000,Engineering,San Francisco,3,,True,2021-12-01,2700
+Zach,43,93000,Engineering,Seattle,18,4.5,True,2006-05-12,7800
+Amy,30,66000,Sales,New York,6,3.6,False,2018-10-30,4200
+Brian,48,105000,Marketing,Chicago,23,4.7,False,2001-08-15,9500
+Cathy,33,72000,Engineering,,9,4.3,True,2015-02-28,5500
+David,29,60000,Sales,Seattle,5,3.8,True,2019-07-14,3600
+Elena,40,87000,Engineering,San Francisco,16,4.4,False,2008-04-20,7100
+Felix,27,57000,Marketing,New York,3,3.5,True,2021-01-08,3000
+Gina,35,78000,Sales,Chicago,11,4.1,False,2013-11-25,5900
+Harold,46,98000,Engineering,Seattle,21,,True,2004-02-10,8800
+Irene,32,69000,Marketing,,8,4.0,True,2016-08-17,4800
+James,38,83000,Sales,San Francisco,14,4.2,False,2010-05-30,6500
+Kim,25,51000,Engineering,New York,2,3.9,True,2022-03-15,2400
+Larry,41,89000,Marketing,Chicago,16,4.6,False,2008-12-08,7300
+Maria,34,75000,Engineering,Seattle,10,4.5,True,2014-09-22,5700
+Nick,29,,Sales,San Francisco,5,3.7,True,2019-04-10,3700
+Olga,44,94000,Engineering,New York,19,4.8,False,2005-07-28,8400
+Peter,36,81000,Sales,Chicago,12,4.0,,2012-01-15,6200
+Rosa,28,59000,Marketing,Seattle,4,3.8,True,2020-10-05,3100
+Steve,49,108000,Engineering,San Francisco,24,4.9,True,2002-06-18,9600
+Tara,31,67000,Marketing,New York,7,3.6,False,2017-03-22,4400
+Umar,33,73000,Sales,,9,4.1,True,2015-08-10,5300
+Vera,26,54000,Engineering,Chicago,3,3.9,True,2021-05-28,2800
+Walter,42,92000,Engineering,Seattle,17,4.4,False,2007-02-14,7600
+Xena,37,79000,Marketing,San Francisco,13,,True,2011-11-08,6000
+Yuri,30,64000,Sales,New York,6,3.5,False,2018-06-25,4100
+Zoe,45,96000,Engineering,Chicago,20,4.7,True,2004-10-30,8600
+Aaron,28,58000,Marketing,Seattle,4,3.8,,2020-04-15,3200
+Beth,39,85000,Sales,San Francisco,15,4.2,False,2009-01-20,6900
+Carl,35,,Engineering,New York,11,4.3,True,2013-07-08,
+Dan,43,93000,Marketing,Chicago,18,4.5,False,2006-09-12,7700
+Emma,27,56000,Sales,Seattle,3,3.7,True,2021-02-28,2900
+Fred,50,112000,Engineering,,25,4.9,True,2000-05-10,10000
+Helen,32,70000,Marketing,San Francisco,8,4.0,False,2016-12-18,5100
+Ivan,38,82000,Sales,New York,14,4.1,True,2010-03-25,6400
+Julia,29,61000,Engineering,Chicago,5,,True,2019-09-08,3700
+Kevin,46,99000,Marketing,Seattle,21,4.6,False,2004-06-15,8900
+Linda,34,76000,Sales,San Francisco,10,4.3,True,2014-01-22,5600
+Mike,41,90000,Engineering,New York,16,4.4,,2008-08-05,7400
+Nancy,26,53000,Marketing,,3,3.8,True,2021-11-18,2600
+Oscar,36,80000,Sales,Chicago,12,4.0,False,2012-04-10,6200
+Pam,48,106000,Engineering,Seattle,23,4.8,True,2001-10-28,9400
+Rita,33,71000,Marketing,San Francisco,9,3.9,False,2015-06-14,5200
+Sean,29,62000,Sales,New York,5,3.6,True,2019-12-30,3800
+Tess,40,88000,Engineering,Chicago,16,4.5,False,2008-02-22,7200
+Uma,27,,Marketing,Seattle,3,3.7,,2021-07-10,3000
+Val,44,95000,Sales,San Francisco,19,4.2,True,2005-11-05,8500
+Will,31,68000,Engineering,New York,7,4.1,True,2017-05-18,4600
+Xia,35,77000,Marketing,Chicago,11,4.4,False,2013-09-25,5800
+Yves,42,91000,Sales,,17,4.0,True,2007-04-12,7500
+Zara,30,65000,Engineering,Seattle,6,3.9,True,2018-08-28,4200
+Adam,38,84000,Marketing,San Francisco,14,4.3,False,2010-01-15,6600
+Bella,25,52000,Sales,New York,2,3.5,True,2022-05-20,2500
+Chad,47,101000,Engineering,Chicago,22,4.7,,2003-03-08,9100
