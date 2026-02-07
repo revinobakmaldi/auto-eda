@@ -59,7 +59,7 @@ export function DashboardNav({ hasMissing, hasCorrelations }: DashboardNavProps)
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
-      className="sticky top-[57px] z-40 -mx-4 mb-8 overflow-x-auto border-b border-white/10 bg-background/80 px-4 backdrop-blur-md sm:-mx-6 sm:px-6"
+      className="sticky top-[57px] z-40 -mx-4 mb-8 overflow-x-auto border-b border-white/10 bg-background px-4 sm:-mx-6 sm:px-6"
     >
       <div className="flex gap-1">
         {visibleTabs.map((tab) => {
