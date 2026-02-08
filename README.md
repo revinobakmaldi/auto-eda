@@ -2,7 +2,7 @@
 
 Instant exploratory data analysis in the browser. Upload a CSV and get comprehensive stats, distributions, correlations, and missing value analysis — no setup, no code.
 
-**Live demo:** [auto-eda-revinobakmaldi.vercel.app](https://auto-eda-revinobakmaldi.vercel.app)
+**Live demo:** [auto-eda-csv.vercel.app](https://auto-eda-csv.vercel.app)
 
 ## Features
 
