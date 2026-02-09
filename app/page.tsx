@@ -49,7 +49,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <AnimatedBackground />
       <Navbar />
 
@@ -186,7 +186,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-zinc-200/50 dark:border-zinc-800/50 py-6 text-center text-xs text-zinc-500">
+      <footer className="mt-auto border-t border-zinc-200/50 dark:border-zinc-800/50 py-6 text-center text-xs text-zinc-500">
         Built by{" "}
         <a
           href="https://revinobakmaldi.vercel.app"
