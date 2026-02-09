@@ -19,9 +19,9 @@ export function GlassmorphismCard({
     <motion.div
       variants={cardVariants}
       className={cn(
-        "rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md",
+        "rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/80 dark:bg-zinc-900/80 p-6 backdrop-blur-md",
         hover &&
-          "transition-all duration-300 hover:border-primary/30 hover:bg-white/[0.08] hover:shadow-lg hover:shadow-primary/5",
+          "transition-all duration-300 hover:border-primary/30 hover:bg-white dark:hover:bg-zinc-800/80 hover:shadow-lg hover:shadow-primary/5",
         className
       )}
     >

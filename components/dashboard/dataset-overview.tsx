@@ -43,13 +43,13 @@ export function DatasetOverview({ overview }: DatasetOverviewProps) {
       label: "Duplicates",
       value: `${overview.n_duplicates.toLocaleString()} (${formatPercentage(overview.duplicate_percentage)})`,
       icon: Copy,
-      color: overview.n_duplicates > 0 ? "text-yellow-400" : "text-primary",
+      color: overview.n_duplicates > 0 ? "text-yellow-600 dark:text-yellow-400" : "text-primary",
     },
     {
       label: "Missing Cells",
       value: `${overview.total_missing_cells.toLocaleString()} (${formatPercentage(overview.missing_percentage)})`,
       icon: AlertTriangle,
-      color: overview.total_missing_cells > 0 ? "text-orange-400" : "text-primary",
+      color: overview.total_missing_cells > 0 ? "text-orange-600 dark:text-orange-400" : "text-primary",
     },
     {
       label: "Data Types",
@@ -80,11 +80,11 @@ export function DatasetOverview({ overview }: DatasetOverviewProps) {
           return (
             <GlassmorphismCard key={card.label}>
               <motion.div variants={cardVariants} className="flex items-start gap-3">
-                <div className="rounded-lg bg-white/5 p-2">
+                <div className="rounded-lg bg-zinc-100 dark:bg-zinc-800 p-2">
                   <Icon className={`h-5 w-5 ${card.color}`} />
                 </div>
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
+                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
                     {card.label}
                   </p>
                   <p className="mt-1 text-lg font-semibold text-foreground">

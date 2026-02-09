@@ -19,6 +19,14 @@ interface VariableCardProps {
   variable: VariableInfo;
 }
 
+const tooltipStyle = {
+  background: "var(--chart-tooltip-bg)",
+  border: "1px solid var(--chart-tooltip-border)",
+  borderRadius: "8px",
+  fontSize: "12px",
+  color: "var(--chart-tooltip-text)",
+};
+
 export function VariableCard({ variable }: VariableCardProps) {
   const isNumeric = !!variable.numeric;
 
@@ -38,10 +46,10 @@ export function VariableCard({ variable }: VariableCardProps) {
             <h3 className="truncate font-mono text-sm font-semibold text-foreground">
               {variable.name}
             </h3>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-zinc-500 dark:text-zinc-400">
               {variable.dtype} &bull; {variable.n_unique} unique
               {variable.n_missing > 0 && (
-                <span className="text-orange-400">
+                <span className="text-orange-600 dark:text-orange-400">
                   {" "}&bull; {formatPercentage(variable.missing_percentage)} missing
                 </span>
               )}
@@ -61,8 +69,8 @@ export function VariableCard({ variable }: VariableCardProps) {
                 { label: "Max", value: formatNumber(variable.numeric.max) },
                 { label: "Skewness", value: formatNumber(variable.numeric.skewness) },
               ].map((stat) => (
-                <div key={stat.label} className="rounded-lg bg-white/5 px-2 py-1.5">
-                  <p className="text-gray-400">{stat.label}</p>
+                <div key={stat.label} className="rounded-lg bg-zinc-100 dark:bg-zinc-800 px-2 py-1.5">
+                  <p className="text-zinc-500 dark:text-zinc-400">{stat.label}</p>
                   <p className="font-mono font-medium text-foreground">{stat.value}</p>
                 </div>
               ))}
@@ -77,15 +85,7 @@ export function VariableCard({ variable }: VariableCardProps) {
                   >
                     <XAxis dataKey="label" hide />
                     <YAxis hide />
-                    <Tooltip
-                      contentStyle={{
-                        background: "#1a1a2e",
-                        border: "1px solid rgba(255,255,255,0.1)",
-                        borderRadius: "8px",
-                        fontSize: "12px",
-                        color: "#ededed",
-                      }}
-                    />
+                    <Tooltip contentStyle={tooltipStyle} />
                     <Bar dataKey="count" fill="#3b82f6" radius={[2, 2, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
@@ -97,23 +97,23 @@ export function VariableCard({ variable }: VariableCardProps) {
         {/* Categorical Stats */}
         {variable.categorical && (
           <div>
-            <p className="mb-2 text-xs text-gray-400">
+            <p className="mb-2 text-xs text-zinc-500 dark:text-zinc-400">
               Top: <span className="font-mono text-foreground">{variable.categorical.top_value}</span>{" "}
-              ({variable.categorical.top_frequency}×)
+              ({variable.categorical.top_frequency}&times;)
             </p>
 
             {variable.categorical.value_counts.length > 0 && (
               <div className="space-y-1.5">
                 {variable.categorical.value_counts.slice(0, 6).map((vc) => (
                   <div key={vc.value} className="flex items-center gap-2 text-xs">
-                    <span className="w-20 truncate font-mono text-gray-300">{vc.value}</span>
-                    <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/5">
+                    <span className="w-20 truncate font-mono text-zinc-700 dark:text-zinc-300">{vc.value}</span>
+                    <div className="h-2 flex-1 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800">
                       <div
                         className="h-full rounded-full bg-accent"
                         style={{ width: `${vc.percentage}%` }}
                       />
                     </div>
-                    <span className="w-12 text-right tabular-nums text-gray-400">
+                    <span className="w-12 text-right tabular-nums text-zinc-500 dark:text-zinc-400">
                       {formatPercentage(vc.percentage)}
                     </span>
                   </div>

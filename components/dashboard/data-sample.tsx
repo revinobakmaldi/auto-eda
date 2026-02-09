@@ -24,7 +24,7 @@ function getTypeBadge(value: unknown): { label: string; className: string } {
 }
 
 function formatCell(value: unknown): string {
-  if (value === null || value === undefined) return "—";
+  if (value === null || value === undefined) return "\u2014";
   if (typeof value === "number") {
     if (Number.isInteger(value)) return value.toLocaleString();
     return value.toLocaleString(undefined, { maximumFractionDigits: 4 });
@@ -52,14 +52,14 @@ export function DataSample({ sampleRows, columns }: DataSampleProps) {
         >
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-white/10 bg-white/[0.03]">
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400">
+              <tr className="border-b border-zinc-200/50 dark:border-zinc-800/50 bg-zinc-50 dark:bg-zinc-800/50">
+                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
                   #
                 </th>
                 {columns.map((col) => (
                   <th
                     key={col}
-                    className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-400"
+                    className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400"
                   >
                     {col}
                   </th>
@@ -70,11 +70,11 @@ export function DataSample({ sampleRows, columns }: DataSampleProps) {
               {sampleRows.map((row, i) => (
                 <tr
                   key={i}
-                  className={`border-b border-white/5 transition-colors hover:bg-white/[0.03] ${
-                    i % 2 === 0 ? "" : "bg-white/[0.01]"
+                  className={`border-b border-zinc-100 dark:border-zinc-800/30 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-800/50 ${
+                    i % 2 === 0 ? "" : "bg-zinc-50/50 dark:bg-zinc-800/20"
                   }`}
                 >
-                  <td className="px-4 py-2.5 font-mono text-xs text-gray-500">
+                  <td className="px-4 py-2.5 font-mono text-xs text-zinc-500">
                     {i + 1}
                   </td>
                   {columns.map((col) => {
@@ -83,7 +83,7 @@ export function DataSample({ sampleRows, columns }: DataSampleProps) {
                     return (
                       <td key={col} className="px-4 py-2.5">
                         <div className="flex items-center gap-2">
-                          <span className="font-mono text-gray-200">
+                          <span className="font-mono text-zinc-800 dark:text-zinc-200">
                             {formatCell(value)}
                           </span>
                           {(value === null || value === undefined) && (

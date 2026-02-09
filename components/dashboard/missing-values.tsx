@@ -42,10 +42,10 @@ export function MissingValues({ missingValues }: MissingValuesProps) {
               variants={cardVariants}
               className="flex items-center gap-3"
             >
-              <span className="w-32 truncate font-mono text-sm text-gray-300 sm:w-44">
+              <span className="w-32 truncate font-mono text-sm text-zinc-700 dark:text-zinc-300 sm:w-44">
                 {mv.column}
               </span>
-              <div className="h-3 flex-1 overflow-hidden rounded-full bg-white/5">
+              <div className="h-3 flex-1 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: `${mv.percentage}%` }}
@@ -54,7 +54,7 @@ export function MissingValues({ missingValues }: MissingValuesProps) {
                   className={`h-full rounded-full ${getBarColor(mv.percentage)}`}
                 />
               </div>
-              <span className="w-20 text-right font-mono text-xs text-gray-400">
+              <span className="w-20 text-right font-mono text-xs text-zinc-500 dark:text-zinc-400">
                 {mv.count.toLocaleString()} ({formatPercentage(mv.percentage)})
               </span>
             </motion.div>

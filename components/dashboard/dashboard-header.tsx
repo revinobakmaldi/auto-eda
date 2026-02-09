@@ -25,14 +25,14 @@ export function DashboardHeader({ fileName, overview, onReset }: DashboardHeader
         </div>
         <div>
           <h1 className="text-xl font-bold text-foreground">{fileName}</h1>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">
             {overview.n_rows.toLocaleString()} rows &times; {overview.n_columns} columns &bull; {overview.memory_usage_display}
           </p>
         </div>
       </div>
       <button
         onClick={onReset}
-        className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300 transition-all hover:border-primary/30 hover:bg-white/[0.08] hover:text-foreground"
+        className="inline-flex items-center gap-2 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 transition-all hover:border-primary/30 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
       >
         <RotateCcw className="h-4 w-4" />
         Upload New

@@ -71,7 +71,7 @@ export function CorrelationHeatmap({ correlations }: CorrelationHeatmapProps) {
               {columns.map((col) => (
                 <div
                   key={`col-${col}`}
-                  className="truncate px-1 pb-2 text-center font-mono text-xs text-gray-400"
+                  className="truncate px-1 pb-2 text-center font-mono text-xs text-zinc-500 dark:text-zinc-400"
                   title={col}
                 >
                   {col}
@@ -84,7 +84,7 @@ export function CorrelationHeatmap({ correlations }: CorrelationHeatmapProps) {
                   {/* Row label */}
                   <div
                     key={`row-label-${i}`}
-                    className="flex items-center justify-end truncate pr-3 font-mono text-xs text-gray-400"
+                    className="flex items-center justify-end truncate pr-3 font-mono text-xs text-zinc-500 dark:text-zinc-400"
                     title={columns[i]}
                   >
                     {columns[i]}
@@ -109,7 +109,7 @@ export function CorrelationHeatmap({ correlations }: CorrelationHeatmapProps) {
                     >
                       <span
                         className={
-                          Math.abs(val) > 0.5 ? "text-white" : "text-gray-400"
+                          Math.abs(val) > 0.5 ? "text-white" : "text-zinc-500 dark:text-zinc-400"
                         }
                       >
                         {val != null ? val.toFixed(2) : ""}
@@ -122,7 +122,7 @@ export function CorrelationHeatmap({ correlations }: CorrelationHeatmapProps) {
           </div>
 
           {/* Legend */}
-          <div className="mt-6 flex items-center justify-center gap-2 text-xs text-gray-400">
+          <div className="mt-6 flex items-center justify-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
             <span>-1</span>
             <div className="flex h-3 w-40 overflow-hidden rounded-full">
               <div className="flex-1" style={{ background: "rgb(59, 130, 246)" }} />
@@ -139,7 +139,7 @@ export function CorrelationHeatmap({ correlations }: CorrelationHeatmapProps) {
       {/* Floating tooltip */}
       {tooltip && (
         <div
-          className="pointer-events-none fixed z-50 rounded-lg border border-white/10 bg-[#1a1a2e] px-3 py-2 text-xs text-gray-200 shadow-lg"
+          className="pointer-events-none fixed z-50 rounded-lg border border-zinc-200/50 dark:border-zinc-800/50 bg-white dark:bg-zinc-900 px-3 py-2 text-xs text-zinc-800 dark:text-zinc-200 shadow-lg"
           style={{
             left: tooltip.x,
             top: tooltip.y - 50,

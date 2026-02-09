@@ -59,7 +59,7 @@ export function DashboardNav({ hasMissing, hasCorrelations }: DashboardNavProps)
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
-      className="sticky top-0 z-40 -mx-4 mb-8 overflow-x-auto border-b border-white/10 bg-background px-4 pt-[57px] sm:-mx-6 sm:px-6"
+      className="sticky top-0 z-40 -mx-4 mb-8 overflow-x-auto border-b border-zinc-200/50 dark:border-zinc-800/50 bg-background px-4 pt-[57px] sm:-mx-6 sm:px-6"
     >
       <div className="flex gap-1">
         {visibleTabs.map((tab) => {
@@ -72,7 +72,7 @@ export function DashboardNav({ hasMissing, hasCorrelations }: DashboardNavProps)
                 "flex items-center gap-1.5 whitespace-nowrap border-b-2 px-3 py-3 text-sm transition-colors",
                 active === tab.id
                   ? "border-primary text-primary"
-                  : "border-transparent text-gray-400 hover:border-white/20 hover:text-gray-200"
+                  : "border-transparent text-zinc-500 dark:text-zinc-400 hover:border-zinc-300 dark:hover:border-zinc-600 hover:text-zinc-700 dark:hover:text-zinc-200"
               )}
             >
               <Icon className="h-4 w-4" />

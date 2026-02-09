@@ -23,11 +23,11 @@ export function SectionHeader({ badge, title, subtitle, id }: SectionHeaderProps
       <span className="mb-3 inline-block rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-xs text-primary">
         {badge}
       </span>
-      <h2 className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-2xl font-bold text-transparent md:text-3xl">
+      <h2 className="bg-gradient-to-r from-zinc-900 to-zinc-500 dark:from-white dark:to-gray-400 bg-clip-text text-2xl font-bold text-transparent md:text-3xl">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-2 text-sm text-gray-400">{subtitle}</p>
+        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{subtitle}</p>
       )}
     </motion.div>
   );
