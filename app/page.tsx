@@ -49,8 +49,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative z-10 flex min-h-screen flex-col text-foreground">
+    <>
       <AnimatedBackground />
+      <div className="relative z-10 flex min-h-screen flex-col text-foreground">
       <Navbar />
 
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -196,5 +197,6 @@ export default function Home() {
         </a>
       </footer>
     </div>
+    </>
   );
 }
